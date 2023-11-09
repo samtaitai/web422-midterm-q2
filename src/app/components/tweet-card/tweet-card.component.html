@@ -1,0 +1,67 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <!-- First Row -->
+      <div class="d-flex justify-content-between align-itmes-center">
+        <div class="d-flex align-itmes-center">
+          <img
+            [src]="'../assets/images/1.jpg'"
+            alt="Profile Image"
+            class="rounded-circle mr-2"
+            [ngStyle]="{ width: '50px' }"
+          />
+          <h6 class="my-auto">{{ user }}</h6>
+        </div>
+        <p class="my-auto">{{ date }}</p>
+      </div>
+
+      <!-- Second Row -->
+      <div class="row mt-2">
+        <div class="col">
+          <p>{{ tweet }}</p>
+        </div>
+      </div>
+
+      <!-- Third Row -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="d-flex align-items-end px-0">
+            <img
+              *ngIf="!showFilledImages"
+              [src]="'../assets/images/like.png'"
+              alt="upVote"
+              [ngStyle]="{ width: '20px' }"
+              (click)="incrementCounter()"
+              class="mr-2"
+            />
+            <img
+              *ngIf="showFilledImages"
+              [src]="'../assets/images/like_filled.png'"
+              alt="upVote"
+              [ngStyle]="{ width: '20px' }"
+              (click)="incrementCounter()"
+              class="mr-2"
+            />
+            <span class="mx-2">{{ counter }}</span>
+            <img
+              *ngIf="!showFilledImages"
+              [src]="'../assets/images/dislike.png'"
+              alt="upVote"
+              [ngStyle]="{ width: '20px' }"
+              (click)="decrementCounter()"
+              class="mx-2"
+            />
+            <img
+              *ngIf="showFilledImages"
+              [src]="'../assets/images/dislike_filled.png'"
+              alt="upVote"
+              [ngStyle]="{ width: '20px' }"
+              (click)="decrementCounter()"
+              class="mx-2"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
